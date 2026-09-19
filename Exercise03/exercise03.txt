@@ -1,1 +1,4 @@
 
+How does #pragma omp master work in this program?
+
+#pragma omp master is an OpenMP directive that allows only the master thread (thread 0) to execute a specific block of code inside a parallel region. In this program, all threads print their thread IDs, but only the master thread executes the statements inside the master block and prints the "Inside Master" and "Exiting Master" messages. Unlike the single directive, which can be executed by any thread, the master directive is always executed by thread 0. After the master block, all threads continue execution of the remaining code in the parallel region.

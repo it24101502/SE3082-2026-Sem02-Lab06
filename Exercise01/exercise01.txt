@@ -1,0 +1,4 @@
+
+How does #pragma omp barrier work in this program?
+
+#pragma omp barrier is a synchronization directive in OpenMP. It forces all threads in the parallel region to wait until every thread reaches the barrier statement. In this program, each thread first prints its thread number. The barrier ensures that all threads complete this first print operation before any thread proceeds to execute the statements after the barrier. As a result, the "Outside Barrier" and "Hi again from thread" messages are printed only after every thread has reached the synchronization point, preventing threads from advancing ahead of others.

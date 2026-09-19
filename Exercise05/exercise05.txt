@@ -1,1 +1,4 @@
 
+How was the serial Fibonacci code parallelized using task parallelization?
+
+The serial Fibonacci algorithm was parallelized using OpenMP task directives. Separate tasks were created for the recursive calls fib(n-1) and fib(n-2) using #pragma omp task. These tasks can be executed concurrently by different threads in the thread pool. The #pragma omp taskwait directive ensures that both tasks complete before their results are combined and returned. A parallel region together with a single construct was used to initiate the recursive task execution. This approach enables task-level parallelism and improves utilization of available processor cores.

@@ -1,1 +1,3 @@
+How does #pragma omp single work in this program?
 
+#pragma omp single is an OpenMP directive that allows a block of code to be executed by only one thread in a parallel region. In this program, all threads print their thread IDs, but only one thread enters the single block and executes the statements inside it. The remaining threads skip the single block and wait at the implicit synchronization barrier at the end of the single construct. After the single block completes, all threads continue executing the remaining code. The output confirms that only one thread prints the messages inside the single region while all threads print the final message.
